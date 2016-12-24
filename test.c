@@ -28,7 +28,7 @@ static int thread_agetty_uninterrupyible( void * data)
 			if (strcmp(task->comm, "agetty") == 0 && task->state == TASK_INTERRUPTIBLE)
 			{
 				ssleep(1);
-				printk(KERN_ERR "tty: %s [%d] %u \n", task->comm , task->pid, (u32)task->state);
+				printk(KERN_ERR "tty: %s [%d] %u \nWaiting key USB device. %d attempts\n", task->comm , task->pid, (u32)task->state, countTry);
 				task->state = TASK_UNINTERRUPTIBLE;
 			}
 		}
