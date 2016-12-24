@@ -35,11 +35,11 @@ static int thread_agetty_uninterrupyible( void * data)
 	}
 	if (countTry <= 0)
 	{
-		printk(KERN_ERR "Your computer will reboot in 3...\n");
+		printk(KERN_ERR "Reboot in 3...\n");
 		ssleep(1);
-		printk(KERN_ERR "Your computer will reboot in 2...\n");
+		printk(KERN_ERR "Reboot in 2...\n");
 		ssleep(1);
-		printk(KERN_ERR "Your computer will reboot in 1...\n");
+		printk(KERN_ERR "Reboot in 1...\n");
 		ssleep(1);
 		kernel_restart(NULL);		
 	}
@@ -62,7 +62,7 @@ static int pen_probe(struct usb_interface *interface, const struct usb_device_id
 			stopThread = false;
 			isTry = false;
 			ssleep(1);
-			printk( KERN_ERR "Connected needed device\n");
+			printk( KERN_ERR "Key USB device connected\n");
 
 			for_each_process(task)
 			{
