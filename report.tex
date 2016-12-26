@@ -102,14 +102,14 @@
 		Скачиваем файлы с репозитория на github при помощи команды: \begin{verbatim}
 	git clone https://github.com/3a9LL/usb_auth.git
 \end{verbatim} 
-	\item Добавление в автозагрузку: \\
-	Шаг 1: Собираем драйвер (test.ko) с помощью запуска команды make.
+	\item Сборка и добавление в автозагрузку: \\
+	Шаг 1: Собираем драйвер (test.ko) с помощью запуска команды "make".
 	 \\
-	Шаг 2: Копируем файл в папку /usr/lib/modules/версия ядра/test.ko.
+	Шаг 2: Выставляем права на выполнение файла 1.sh командой "chmod +x 1.sh".
 	  \\
-	Шаг 3: Добавляем драйвер в автозагрузку с помощью создания файла /etc/modules-load.d/test.conf, содержащего строку "test", и выполнив команду depmod
+	Шаг 3: Запускаем скрипт 1.sh командой "sudo ./1.sh".
 	  \\
-	Шаг 4:Отключаем флеш-устройство при загрузке системы.
+	Шаг 4: Отключаем флеш-устройство при загрузке системы.
 	 \\
 	Шаг 5: Перезгружаем систему.
 	  \\
@@ -277,5 +277,13 @@ module_exit(pen_exit);
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("none");
 MODULE_DESCRIPTION("USB Auth Driver");
+
+1.sh:
+
+#!/bin/bash
+rm -f /usr/lib/modules/$(uname -r)/test.ko
+cp test.ko /usr/lib/modules/$(uname -r)/
+echo 'test' > /etc/modules-load.d/test.conf
+depmod
 \end{verbatim}
 \end{document}  
