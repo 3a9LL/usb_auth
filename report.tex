@@ -63,7 +63,7 @@
 	\end{flushleft}
 
 	\begin{tabular}{p{3cm} p{1cm} p{0.5cm} p{3.5cm} p{0.5cm} p{3.5cm}}
-		СТУДЕНТ ГР. & 4336 & & & & {} \\
+		СТУДЕНТ ГР. & 4336  & & & & Синяев А.И. {} \\
 		\cline{2-2} \cline{4-4} \cline{6-6}
 		& & & \centering \tiny{подпись, дата}
 		& & \centering \tiny{инициалы, фамилия}
@@ -107,7 +107,7 @@
 	 \\
 	Шаг 2: Копируем файл в папку /usr/lib/modules/версия ядра/test.ko.
 	  \\
-	Шаг 3: Добавляем драйвер в автозагрузку с помощью создания файла /etc/modules-load.d/test.conf содержащего строку "test" и команды depmod
+	Шаг 3: Добавляем драйвер в автозагрузку с помощью создания файла /etc/modules-load.d/test.conf, содержащего строку "test", и выполнив команду depmod
 	  \\
 	Шаг 4:Отключаем флеш-устройство при загрузке системы.
 	 \\
@@ -121,19 +121,12 @@
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{1}
-  \caption{Вставка неправильной флешки}\label{fig:1}
-\end{figure}
-
+  \caption{Вставка неправильной флешки дважды c последующей вставкой корректной флешки}\label{fig:1}
+\end{figure}  
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{2}
   \caption{Вставка неправильной флешки третий раз перезагрузка компьютера}\label{fig:1}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.8\textwidth]{3}
-  \caption{Вставка коректной флешки}\label{fig:1}
 \end{figure}
 
 \section{Выводы}
